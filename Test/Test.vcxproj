@@ -83,6 +83,15 @@
       <AdditionalLibraryDirectories>A:\Libraries</AdditionalLibraryDirectories>
       <AdditionalDependencies>Ansi++.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>set ROOT="A:\"
+
+
+echo "Binary Excutable Destination: %ROOT%Applications"
+if NOT EXIST %ROOT%Applications\NUL ( mkdir %ROOT%Applications )
+copy /Y "$(outdir)$(Targetname).exe" %ROOT%Applications
+echo "Done"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -97,6 +106,15 @@
       <AdditionalLibraryDirectories>A:\Libraries</AdditionalLibraryDirectories>
       <AdditionalDependencies>Ansi++.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>set ROOT="A:\"
+
+
+echo "Binary Excutable Destination: %ROOT%Applications"
+if NOT EXIST %ROOT%Applications\NUL ( mkdir %ROOT%Applications )
+copy /Y "$(outdir)$(Targetname).exe" %ROOT%Applications
+echo "Done"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -115,6 +133,15 @@
       <AdditionalLibraryDirectories>A:\Libraries</AdditionalLibraryDirectories>
       <AdditionalDependencies>Ansi++.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>set ROOT="A:\"
+
+
+echo "Binary Excutable Destination: %ROOT%Applications"
+if NOT EXIST %ROOT%Applications\NUL ( mkdir %ROOT%Applications )
+copy /Y "$(outdir)$(Targetname).exe" %ROOT%Applications
+echo "Done"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -133,6 +160,15 @@
       <AdditionalLibraryDirectories>A:\Libraries</AdditionalLibraryDirectories>
       <AdditionalDependencies>Ansi++.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>set ROOT="A:\"
+
+
+echo "Binary Excutable Destination: %ROOT%Applications"
+if NOT EXIST %ROOT%Applications\NUL ( mkdir %ROOT%Applications )
+copy /Y "$(outdir)$(Targetname).exe" %ROOT%Applications
+echo "Done"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cc" />

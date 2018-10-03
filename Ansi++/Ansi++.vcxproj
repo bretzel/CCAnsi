@@ -80,6 +80,35 @@
       <PreprocessorDefinitions>AnsiApi_EXPORT;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
+    <PostBuildEvent>
+      <Command>echo Libraries:
+if NOT EXIST A:\Libraries\NUL ( mkdir A:\Libraries )
+copy /Y "$(outdir)$(Targetname).lib" A:\Libraries
+echo "dll subdirectory:"
+if NOT EXIST A:\Dll\NUL ( mkdir A:\Dll )
+
+echo "$(outdir)$(Targetname).dll A:\Dll:"
+copy /Y "$(outdir)$(Targetname).dll" A:\Dll
+echo "includes subdir specific to $(projectname):"
+if NOT EXIST A:\include\$(TargetName)\NUL ( mkdir "A:\include\$(TargetName)" )
+copy /Y "$(ProjectDir)"*.h "A:\include\$(TargetName)"
+
+
+REM (example:) set SubDirs=(text lexer interpreter interpreter\lang interpreter\rt journal)
+
+REM for %%D in %SubDirs% do (
+REM   echo " Processing directory:$(projectdir)%%D:"
+REM   if EXIST "$(ProjectDir)%%D" (
+REM         echo %%D
+REM        if NOT EXIST A:\include\$(TargetName)\%%D\NUL ( 
+REM              echo " Create sub dir A:\include\$(TargetName)\%%D" 
+REM              mkdir "A:\include\$(TargetName)\%%D" 
+REM        )
+REM       echo "copy /Y $(ProjectDir)%%D\*.h A:\include\$(TargetName)\%%D"
+REM       copy /Y "$(ProjectDir)%%D\"*.h "A:\include\$(TargetName)\%%D"
+REM )
+REM )</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -91,6 +120,35 @@
       <PreprocessorDefinitions>AnsiApi_EXPORT;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
+    <PostBuildEvent>
+      <Command>echo Libraries:
+if NOT EXIST A:\Libraries\NUL ( mkdir A:\Libraries )
+copy /Y "$(outdir)$(Targetname).lib" A:\Libraries
+echo "dll subdirectory:"
+if NOT EXIST A:\Dll\NUL ( mkdir A:\Dll )
+
+echo "$(outdir)$(Targetname).dll A:\Dll:"
+copy /Y "$(outdir)$(Targetname).dll" A:\Dll
+echo "includes subdir specific to $(projectname):"
+if NOT EXIST A:\include\$(TargetName)\NUL ( mkdir "A:\include\$(TargetName)" )
+copy /Y "$(ProjectDir)"*.h "A:\include\$(TargetName)"
+
+
+REM (example:) set SubDirs=(text lexer interpreter interpreter\lang interpreter\rt journal)
+
+REM for %%D in %SubDirs% do (
+REM   echo " Processing directory:$(projectdir)%%D:"
+REM   if EXIST "$(ProjectDir)%%D" (
+REM         echo %%D
+REM        if NOT EXIST A:\include\$(TargetName)\%%D\NUL ( 
+REM              echo " Create sub dir A:\include\$(TargetName)\%%D" 
+REM              mkdir "A:\include\$(TargetName)\%%D" 
+REM        )
+REM       echo "copy /Y $(ProjectDir)%%D\*.h A:\include\$(TargetName)\%%D"
+REM       copy /Y "$(ProjectDir)%%D\"*.h "A:\include\$(TargetName)\%%D"
+REM )
+REM )</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -108,6 +166,35 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>echo Libraries:
+if NOT EXIST A:\Libraries\NUL ( mkdir A:\Libraries )
+copy /Y "$(outdir)$(Targetname).lib" A:\Libraries
+echo "dll subdirectory:"
+if NOT EXIST A:\Dll\NUL ( mkdir A:\Dll )
+
+echo "$(outdir)$(Targetname).dll A:\Dll:"
+copy /Y "$(outdir)$(Targetname).dll" A:\Dll
+echo "includes subdir specific to $(projectname):"
+if NOT EXIST A:\include\$(TargetName)\NUL ( mkdir "A:\include\$(TargetName)" )
+copy /Y "$(ProjectDir)"*.h "A:\include\$(TargetName)"
+
+
+REM (example:) set SubDirs=(text lexer interpreter interpreter\lang interpreter\rt journal)
+
+REM for %%D in %SubDirs% do (
+REM   echo " Processing directory:$(projectdir)%%D:"
+REM   if EXIST "$(ProjectDir)%%D" (
+REM         echo %%D
+REM        if NOT EXIST A:\include\$(TargetName)\%%D\NUL ( 
+REM              echo " Create sub dir A:\include\$(TargetName)\%%D" 
+REM              mkdir "A:\include\$(TargetName)\%%D" 
+REM        )
+REM       echo "copy /Y $(ProjectDir)%%D\*.h A:\include\$(TargetName)\%%D"
+REM       copy /Y "$(ProjectDir)%%D\"*.h "A:\include\$(TargetName)\%%D"
+REM )
+REM )</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -125,6 +212,35 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>echo Libraries:
+if NOT EXIST A:\Libraries\NUL ( mkdir A:\Libraries )
+copy /Y "$(outdir)$(Targetname).lib" A:\Libraries
+echo "dll subdirectory:"
+if NOT EXIST A:\Dll\NUL ( mkdir A:\Dll )
+
+echo "$(outdir)$(Targetname).dll A:\Dll:"
+copy /Y "$(outdir)$(Targetname).dll" A:\Dll
+echo "includes subdir specific to $(projectname):"
+if NOT EXIST A:\include\$(TargetName)\NUL ( mkdir "A:\include\$(TargetName)" )
+copy /Y "$(ProjectDir)"*.h "A:\include\$(TargetName)"
+
+
+REM (example:) set SubDirs=(text lexer interpreter interpreter\lang interpreter\rt journal)
+
+REM for %%D in %SubDirs% do (
+REM   echo " Processing directory:$(projectdir)%%D:"
+REM   if EXIST "$(ProjectDir)%%D" (
+REM         echo %%D
+REM        if NOT EXIST A:\include\$(TargetName)\%%D\NUL ( 
+REM              echo " Create sub dir A:\include\$(TargetName)\%%D" 
+REM              mkdir "A:\include\$(TargetName)\%%D" 
+REM        )
+REM       echo "copy /Y $(ProjectDir)%%D\*.h A:\include\$(TargetName)\%%D"
+REM       copy /Y "$(ProjectDir)%%D\"*.h "A:\include\$(TargetName)\%%D"
+REM )
+REM )</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AnsiApi++.h" />
